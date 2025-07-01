@@ -1,25 +1,21 @@
-The project implements the 3-layers model in C#.NET.
+This C#.NET project follows a three-layer architecture.
 
-The presentation layer implemented in WPF. We build two user interfaces, one for the customer and one for the managers. The customer can see his parcels and add new parcels to send.
+The presentation layer is implemented using WPF.
+The business logic layer handles all core operations.
+The data access layer (DAL) is implemented in two versions. The first version stores data in memory using lists, meaning all data is lost when the application closes. The second version stores data in XML files, allowing data to persist between sessions.
 
-The manager (admin) can see the lists of all drones in the company, all base-stations, customers, amd parcels list. In each list he can choose one item in the list and display his extend details.
+The application provides two user interfaces: one for customers and one for administrators.
 
-Also, we implements the DAL twice. In one implementation we store all the data in lists, therefore all the details delete every time we close the project. The second implementation we save all the data in xml files to make sure we don't lose any data every time we close the project.
+In the customer interface, users can view their parcels and send new parcels.
 
-We implement the Factory design pattern to control on those two implemetation, and to switch between the implementation you just need to change the 3-rd line in 'dal-config.xml' to the relevant elements there.
+In the admin interface, users can view lists of drones, base stations, customers, and parcels. From each list, a specific item can be selected to view detailed information.
 
-In the project we also create a simulator to simulate a life-sycle of one drone in the company. To turn on the simulator you first need to:
+The project uses the Factory design pattern to manage the two DAL implementations. To switch between them, edit the dal-config.xml file and update the third line to match the desired implementation.
 
-Login as admin.
-Select 'Drone list'.
-Select one drone. (duble click)
-Click on the 'simulator' button.
-The simulator work with BackgroundWorker.
+A drone simulator is included to simulate the life cycle of a drone. The simulator uses a BackgroundWorker. To activate the simulator, log in as admin, go to the drone list, double-click a drone, and click the "Simulator" button.
 
-For fluent use in the xml DAL implementation, we recommend you to first click on the 'reset' button on the main window and restart the project.
+When using the XML-based DAL, it is recommended to press the "Reset" button on the main window and restart the project before continuing.
 
-The user names and paswords: for customers: usernames - customer0, customer1, etc. and the passwords is the same as the usernames. for managers its: admin for the username and password.
-
-The VIP button is for login without username and password (for debugging uses).
-
-Hope you will like this.
+Login credentials are as follows:
+For customers, usernames are customer0, customer1, and so on. The password is the same as the username.
+For admin, both the username and password are "admin".
