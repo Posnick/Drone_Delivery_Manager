@@ -1,0 +1,21 @@
+﻿<Window x:Class="PL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Closed="Window_Closed" Background="LightYellow">
+    <Grid>
+        <Button Name="LoginButton" Content="Login" HorizontalAlignment="Center" Margin="0,288,0,0" VerticalAlignment="Top" Height="24" Width="60" Click="LoginButton_Click"/>
+        <Button Name="SignUp" Content="Sign up" HorizontalAlignment="Left" Margin="517,288,0,0" VerticalAlignment="Top" Height="25" Width="60" Click="SignUp_Click"/>
+        <TextBox Name="UserNameTB" HorizontalAlignment="Left" Margin="380,97,0,0" Text="User Name" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" GotFocus="UserNameTB_GotFocus" LostFocus="UserNameTB_LostFocus" PreviewTextInput="UserNameTextBox_PreviewTextInput"/>
+        <PasswordBox Name="PasswordPB" HorizontalAlignment="Left" VerticalAlignment="Top" Height="19" Margin="380,165,0,0" Width="120" KeyDown="Window_KeyDown"/>
+        <TextBox Name="PasswordTB" Visibility="Collapsed" HorizontalAlignment="Left" VerticalAlignment="Top" Height="19" Margin="380,165,0,0" Width="120"/>
+
+        <TextBlock Name="UserNameMessage" HorizontalAlignment="Left" Margin="355,120,0,0" Text="User Name is not valid ,please sign up" Visibility="Hidden"  TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFF10A0A"/>
+        <CheckBox Name="revealModeCheckBox" Content="Show Password" Visibility="Hidden" HorizontalAlignment="Left" Margin="505,167,0,0" VerticalAlignment="Top" IsChecked="False" Unchecked="ShowPassword_Unchecked"  Checked="ShowPassword_Checked"/>
+        <TextBlock HorizontalAlignment="Left" Margin="380,141,0,0" Text="Password:" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.51,-0.16"/>
+        <Image Source="resources/logo3.png" HorizontalAlignment="Left" Height="196" VerticalAlignment="Top" Width="375"/>
+    </Grid>
+</Window>

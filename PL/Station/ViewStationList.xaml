@@ -1,0 +1,40 @@
+﻿<Window x:Class="PL.ViewStationList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL"
+        mc:Ignorable="d"
+        Title="ViewStationList" Height="800" Width="800" Closing="Window_Closing">
+    <Grid Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="400*"/>
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="UpperGrid" Grid.Row="0" Width="auto" Height="auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="LightYellow">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150*"/>
+                <ColumnDefinition Width="150*"/>
+                <ColumnDefinition Width="150*"/>
+            </Grid.ColumnDefinitions>
+            <Button Name="GroupByChargingSlots" Content="View Charging Slots" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Click="GroupByStationListWithAvailableChargingSlots_Click" Height="36" Width="140"/>
+            <Button Name="AddButton" Content="Add new Station" Grid.Column="0" HorizontalAlignment="Left" Margin="54,0,0,0" VerticalAlignment="Center" Click="AddButton_Click" Height="36" Width="138"/>
+            <Button Name="CloseButton" Content="Close" Grid.Column="2" HorizontalAlignment="Center" Margin="0,30,0,25" Width="110" Foreground="#FFF60C0C" Click="Close_Click"/>
+        </Grid>
+
+        <ListView x:Name="StationListView" Grid.Row="1"  Cursor="Hand" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MouseDoubleClick="StationListView_MouseDoubleClick" Background="LightYellow">
+            <ListView.View>
+
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Id, Mode=OneWay}" Header="ID " Width="100"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Name, Mode=OneWay}"  Header="NAME" Width="100"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding AvailableChargeSlots, Mode=OneWay}" Header="Available Charge Slots" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding NotAvailableChargeSlots, Mode=OneWay}" Header="Not Available Charge Slots" Width="150" />
+                </GridView>
+
+            </ListView.View>
+
+        </ListView>
+    </Grid>
+</Window>

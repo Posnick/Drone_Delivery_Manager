@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>DalObject</AssemblyName>
+    <RootNamespace>Dal</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DalFacade\DalFacade.csproj" />
+  </ItemGroup>
+
+</Project>

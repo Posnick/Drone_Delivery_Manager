@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="resources\Drone.png" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\BL\BL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="resources\Drone.png" />
+    <Resource Include="resources\DroneInDelivery1.jpg" />
+    <Resource Include="resources\logo3.png" />
+    <Resource Include="resources\logo4.png" />
+  </ItemGroup>
+
+</Project>

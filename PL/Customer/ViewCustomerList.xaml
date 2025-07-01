@@ -1,0 +1,41 @@
+﻿<Window x:Class="PL.ViewCustomerList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL"
+        mc:Ignorable="d"
+        Title="ViewCustomerList" Height="800" Width="800" Closing="Window_Closing">
+    <Grid Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="400*"/>
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="UpperGrid" Grid.Row="0" Width="auto" Height="auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Background="LightYellow">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Name="AddCustomerButton" Content="Add new Customer" Grid.Column="0" HorizontalAlignment="Center" Margin="37,0,0,0" VerticalAlignment="Center" Click="AddCustomerButton_Click" Height="45" Width="142"/>
+        </Grid>
+        <ListView x:Name="CustomerListView" Grid.Row="1" Cursor="Hand" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MouseDoubleClick="CustomerListView_MouseDoubleClick"  Background="LightYellow">
+            <ListView.View>
+
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Id, Mode=OneWay}" Header="ID " Width="100"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}"  Header="NAME" Width="100"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Phone}" Header="PHONE" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding SendAndDeliveredParcels}" Header="DELIVERED" Width="200" />
+                    <GridViewColumn DisplayMemberBinding="{Binding SendAndNotDeliveredParcels}" Header="IN DELIVERY" Width="200" />
+                    <GridViewColumn DisplayMemberBinding="{Binding DeliveredParcels}" Header="RECIVED" Width="150" />
+                    <GridViewColumn DisplayMemberBinding="{Binding PickedUpParcels}" Header="IN SHIPMENT" Width="150" />
+                </GridView>
+
+            </ListView.View>
+
+        </ListView>
+        <Button Name="CloseButton" Content="Close" HorizontalAlignment="Center" VerticalAlignment="Center" Height="42" Width="146" Foreground="#FFFC0909" Click="CloseButton_Click" Margin="601,0,0,0"/>
+    </Grid>
+</Window>

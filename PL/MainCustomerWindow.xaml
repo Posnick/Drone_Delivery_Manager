@@ -1,0 +1,15 @@
+﻿<Window x:Class="PL.MainCustomerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL"
+        mc:Ignorable="d"
+        Title="MainCustomerWindow" Height="450" Width="800" Background="LightYellow">
+    <Grid>
+        <Button Name="AddParcelButton" Content="Add Parcel" HorizontalAlignment="Left" Margin="530,105,0,0" VerticalAlignment="Top" Height="44" Width="207" Click="AddParcelFromCustomerButton_Click"/>
+        <Button Name="ViewParcel" Content="View Parcel" HorizontalAlignment="Left" Margin="530,178,0,0" VerticalAlignment="Top" Height="39" Width="207" Click="ViewParcelFromCustomer_Click"/>
+        <Image Source="resources/logo4.png" HorizontalAlignment="Left" Height="232" VerticalAlignment="Top" Width="443"/>
+
+    </Grid>
+</Window>
